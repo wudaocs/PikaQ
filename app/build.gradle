@@ -52,9 +52,9 @@ dependencies {
     implementation frame['appcompat']
     implementation frame['material']
 
-//    implementation image['glide']
-//    implementation image['okhttp3-integration']
-//    kapt image['glide-compiler']
+    implementation image['glide']
+    implementation image['okhttp3-integration']
+    kapt image['glide-compiler']
 
     implementation network['okhttp']
     implementation third['logger']
@@ -67,14 +67,14 @@ dependencies {
     implementation compose['compose-ui-tooling-preview']
     implementation compose['material3']
 
-//    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
 
-//    testImplementation testVersion['junit']
-//    androidTestImplementation testVersion['ext-junit']
-//    androidTestImplementation testVersion['espresso-core']
-//    androidTestImplementation testVersion['ui-test-junit4']
-//    debugImplementation testVersion['ui-tooling']
-//    debugImplementation testVersion['ui-test-manifest']
+    testImplementation testVersion['junit']
+    androidTestImplementation testVersion['ext-junit']
+    androidTestImplementation testVersion['espresso-core']
+    androidTestImplementation testVersion['ui-test-junit4']
+    debugImplementation testVersion['ui-tooling']
+    debugImplementation testVersion['ui-test-manifest']
 
     // 添加frame依赖
     implementation project(':base-components:frame')
