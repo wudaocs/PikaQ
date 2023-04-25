@@ -12,5 +12,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+apply from: "versions.gradle"
+
 rootProject.name = "PikaQ"
 include ':app'
+include ':base-components:frame'
+

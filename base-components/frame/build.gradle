@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+//apply(from: "../../versions.gradle")
+
+android {
+    namespace 'com.whatever.frame'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation frame['core-ktx']
+    implementation frame['appcompat']
+    implementation frame['material']
+//    testImplementation testVersion['junit']
+//    androidTestImplementation testVersion['ext-junit']
+//    androidTestImplementation testVersion['espresso-core']
+
+//    implementation image['glide']
+//    implementation image['okhttp3-integration']
+//    kapt image['glide-compiler']
+
+    implementation network['okhttp']
+    implementation third['logger']
+
+}
+
+//configurations.all{
+//    resolutionStrategy.force("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
+//}
+
+/**
+ * 获取配置文件信息
+ * def prop = getProp()
+ * implementation prop.getProperty('core-ktx')
+ * @return 配置文件对象
+ */
+def getProp() {
+    def customPropsFile = file('../../configs.properties')
+    if (customPropsFile.exists()) {
+        Properties customProps = new Properties()
+        customProps.load(new FileInputStream(customPropsFile))
+        return customProps
+    }
+    return null
+}
