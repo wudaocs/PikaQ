@@ -31,6 +31,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += ["-XXLanguage:+InlineClasses", "-XXLanguage:-NewInference"]
     }
 }
 
@@ -48,6 +49,15 @@ dependencies {
 
     implementation network['okhttp']
     implementation third['logger']
+
+    implementation compose['activity-compose']
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
+    implementation compose['compose-ui']
+    implementation compose['compose-ui-graphics']
+    implementation compose['compose-ui-tooling-preview']
+    implementation compose['material3']
+
+    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
 
 }
 

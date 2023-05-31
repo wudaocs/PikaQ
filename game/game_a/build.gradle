@@ -1,24 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.whatever.pikaq'
+    namespace 'com.whatever.game_a'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.whatever.pikaq"
         minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
     }
 
     buildTypes {
@@ -34,30 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
     implementation frame['core-ktx']
     implementation frame['appcompat']
     implementation frame['material']
-
-    implementation image['glide']
-    implementation image['okhttp3-integration']
-    kapt image['glide-compiler']
-
-    implementation network['okhttp']
-    implementation third['logger']
 
     implementation frame['lifecycle-runtime-ktx']
     implementation compose['activity-compose']
@@ -76,13 +54,6 @@ dependencies {
     debugImplementation testVersion['ui-tooling']
     debugImplementation testVersion['ui-test-manifest']
 
-    // 添加frame依赖
     implementation project(':base-components:frame')
-    implementation project(':game:game_a')
-}
 
-configurations.all() { Configuration configuration ->
-    configuration.resolutionStrategy.force("androidx.core:core-ktx:1.8.0")
-    configuration.resolutionStrategy.force("androidx.activity:activity:1.6.0")
 }
-

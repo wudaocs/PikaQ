@@ -1,10 +1,14 @@
 package com.whatever.pikaq
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,10 +25,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.whatever.frame.entities.GenerallyListEntity
+import com.whatever.frame.utils.L
 import com.whatever.pikaq.ui.theme.PikaQTheme
 
 class MainActivity : ComponentActivity() {
@@ -73,6 +79,11 @@ fun MainView() {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MessageList(messages: List<GenerallyListEntity>) {
+    val activityLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()) { result ->
+        // 处理返回结果
+    }
+    val context = LocalContext.current
     LazyColumn(
         modifier = Modifier
             .padding(10.dp, 0.dp, 10.dp, 0.dp)
@@ -84,6 +95,10 @@ fun MessageList(messages: List<GenerallyListEntity>) {
                 modifier = Modifier
                     .height(50.dp)
                     .fillMaxWidth()
+                    .clickable(onClick = {
+                        L.el("compose", "点击了一个条目")
+                        activityLauncher.launch(Intent(context,GameChooseNumActivity::class.java))
+                })
             ) {
                 Text(text = item.title, Modifier.animateItemPlacement())
                 Text(text = item.description)

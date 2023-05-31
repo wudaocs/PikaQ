@@ -19,3 +19,4 @@ rootProject.name = "PikaQ"
 include ':app'
 include ':base-components:frame'
 
+include ':game:game_a'
