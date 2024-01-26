@@ -1,5 +1,4 @@
-# 开发自定义Gradle插件
-
+# [开发自定义Gradle插件](https://docs.gradle.org/current/userguide/custom_plugins.html#sec:getting_input_from_the_build)
 
 Gradle 插件包建立可重用的构建逻辑片段，它可以用于许多不同的项目和构建。Gradle允许你实现自己的插件，这样你就可以重用你的构建逻辑，并与他人共享。
 你可以用任何你喜欢的语言实现Gradle插件，前提是实现最终被编译为JVM字节码。在我们的示例中，我们将使用Java作为独立插件项目的实现语言，并在buildscript插件示例中使用Groovy或Kotlin。通常，使用 Java 或 Kotlin 实现的静态类型的插件比使用 Groovy 实现的同一个插件性能更好。
