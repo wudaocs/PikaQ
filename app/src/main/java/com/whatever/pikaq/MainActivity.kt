@@ -47,7 +47,14 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        
+        testBlock()
     }
+
+    private fun testBlock(){
+        Thread.sleep(100)
+    }
+
 }
 
 @Preview(showBackground = true)

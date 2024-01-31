@@ -4,10 +4,8 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="Android Studio java home" />
+        <option name="gradleJvm" value="corretto-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -16,8 +14,11 @@
             <option value="$PROJECT_DIR$/base-components/frame" />
             <option value="$PROJECT_DIR$/game" />
             <option value="$PROJECT_DIR$/game/game_a" />
+            <option value="$PROJECT_DIR$/monitor" />
+            <option value="$PROJECT_DIR$/monitor/block" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

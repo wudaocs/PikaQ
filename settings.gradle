@@ -13,10 +13,10 @@ dependencyResolutionManagement {
     }
 }
 
-apply from: "versions.gradle"
-
 rootProject.name = "PikaQ"
 include ':app'
 include ':base-components:frame'
 
 include ':game:game_a'
+include ':monitor'
+include ':monitor:block'

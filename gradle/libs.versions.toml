@@ -1,0 +1,95 @@
+[versions]
+agp = "7.4.2"
+androidx-appcompat = "1.6.1"
+androidx-constraintlayout = "2.1.4"
+androidx-core-ktx = "1.10.1"
+androidx-fragment-ktx = "1.6.2"
+androidx-lifecycle = "2.3.1"
+activity-compose = "1.5.1"
+asm = "9.5"
+coil = "2.4.0"
+gson = "2.10.1"
+junit = "4.13.2"
+kotlin = "1.8.10"
+kotlinx-coroutines = "1.6.1"
+ksp = "1.9.10-1.0.13"
+leakcanary = "2.12"
+okhttp = '4.9.0'
+retrofit = '2.9.0'
+room = "2.6.0"
+org-jetbrains-kotlin-jvm = "1.8.10"
+kotlin-bom = "1.8.0"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+material = "1.8.0"
+startUp = "1.1.1"
+compose-bom = "2022.12.00"
+glide = "4.14.2"
+okhttp3-integration = "4.11.0"
+glide-compiler = "4.11.0"
+logger = "2.2.0"
+
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidx-fragment-ktx" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
+asm-analysis = { group = "org.ow2.asm", name = "asm-analysis", version.ref = "asm" }
+asm-commons = { group = "org.ow2.asm", name = "asm-commons", version.ref = "asm" }
+asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
+asm-util = { group = "org.ow2.asm", name = "asm-util", version.ref = "asm" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-gif = { group = "io.coil-kt", name = "coil-gif", version.ref = "coil" }
+coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+coil-video = { group = "io.coil-kt", name = "coil-video", version.ref = "coil" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+leakcanary-android = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanary" }
+okhttp3-lib = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin-bom" }
+# 测试相关
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+#
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+startup = { group = "androidx.startup", name = "startup-runtime", version.ref = "startUp" }
+#compose相关
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-ui-lib = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+material3 = { group = "androidx.compose.material3", name = "material3" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+# 三方依赖
+glideLoader = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+okhttp3-integration = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version.ref = "okhttp3-integration" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "okhttp3-integration" }
+logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
+
+
+
+
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
