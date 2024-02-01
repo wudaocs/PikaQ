@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base-components" />
             <option value="$PROJECT_DIR$/base-components/frame" />
+            <option value="$PROJECT_DIR$/base-components/permission" />
             <option value="$PROJECT_DIR$/game" />
             <option value="$PROJECT_DIR$/game/game_a" />
             <option value="$PROJECT_DIR$/monitor" />

@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.whatever.block"
+    namespace = "com.whatever.permission"
     compileSdk = Integer.parseInt(libs.versions.compilesdk.get())
 
     defaultConfig {
@@ -38,7 +38,6 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)

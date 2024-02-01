@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace 'com.whatever.frame'
-    compileSdk 33
+    compileSdk Integer.parseInt(libs.versions.compilesdk.get())
 
     defaultConfig {
-        minSdk 26
+        minSdk Integer.parseInt(libs.versions.minSdk.get())
         versionCode 1
         versionName "1.0"
 

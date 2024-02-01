@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace 'com.whatever.pikaq'
-    compileSdk 33
+    compileSdk Integer.parseInt(libs.versions.compilesdk.get())
 
     defaultConfig {
         applicationId "com.whatever.pikaq"
-        minSdk 26
+        minSdk Integer.parseInt(libs.versions.minSdk.get())
         versionCode 1
         versionName "1.0"
 
