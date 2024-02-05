@@ -1,13 +1,11 @@
-﻿@file:Suppress("UnstableApiUsage")
-
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+﻿@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace = "com.whatever.permission"
+    namespace = "com.whatever.logger"
     compileSdk = Integer.parseInt(libs.versions.compilesdk.get())
 
     defaultConfig {
@@ -22,7 +20,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
+                "proguard-rules.pro"
             )
         }
     }
@@ -44,6 +42,6 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation(project(":base-components:logger"))
-
+    implementation(libs.logger)
+    implementation(libs.startup)
 }

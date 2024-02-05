@@ -1,6 +1,6 @@
 [versions]
 compilesdk="33"
-minSdk="22"
+minSdk="23"
 agp = "7.4.2"
 androidx-appcompat = "1.6.1"
 androidx-constraintlayout = "2.1.4"

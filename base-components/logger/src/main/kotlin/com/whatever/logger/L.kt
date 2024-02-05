@@ -1,5 +1,7 @@
-package com.whatever.frame.utils
-
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Looper
 import android.util.Log
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -7,10 +9,26 @@ import com.orhanobut.logger.Logger
 /**
  * log printer
  */
-@Suppress("unused")
 object L {
-    private val isDebug: Boolean = loggerEnable == 0
-    private val TAG = L.javaClass.name
+    private val TAG = "LogPrint"
+    private var isDebug: Boolean = false
+    fun buildLogger(context: Context) {
+        isDebug = getDebugState(context)
+    }
+
+    private fun getDebugState(context: Context): Boolean {
+        val meta = context.packageManager?.run {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                getApplicationInfo(
+                    context.packageName,
+                    PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())
+                )
+            } else {
+                getApplicationInfo(context.packageName, PackageManager.GET_META_DATA)
+            }
+        }
+        return meta?.metaData?.getInt("LOG_ENABLE") == 0
+    }
 
     init {
         Logger.addLogAdapter(AndroidLogAdapter())
@@ -19,7 +37,7 @@ object L {
     fun v(msg: String? = null) {
         if (isDebug) {
             msg?.run {
-                Log.v(TAG, msg)
+                Logger.v(TAG, msg)
             }
         }
     }
@@ -35,13 +53,9 @@ object L {
     fun d(msg: Any? = null) {
         if (isDebug) {
             msg?.run {
-                Log.d(TAG, msg.toString())
+                Logger.d(msg.toString())
             }
         }
-    }
-
-    fun d(msg: String? = null) {
-        dl(TAG, msg)
     }
 
     fun dl(tag: String = TAG, msg: String? = null) {

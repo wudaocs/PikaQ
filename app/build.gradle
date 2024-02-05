@@ -79,6 +79,8 @@ dependencies {
 
     // 添加frame依赖
     implementation project(':base-components:frame')
+    implementation project(':base-components:permission')
+    implementation project(':base-components:logger')
     implementation project(':game:game_a')
     implementation project(':monitor:block')
 }

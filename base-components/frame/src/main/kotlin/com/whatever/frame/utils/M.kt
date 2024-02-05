@@ -69,4 +69,3 @@ private fun getMeta(): Bundle? {
     }
 }
 
-val loggerEnable: Int = getMetaDataByInt("LOG_ENABLE")

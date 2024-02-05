@@ -46,7 +46,7 @@ dependencies {
     kapt(libs.glide.compiler)
 
     implementation(libs.okhttp3.lib)
-    implementation(libs.logger)
+
 
     implementation(libs.activity.compose)
     implementation platform(libs.compose.bom)

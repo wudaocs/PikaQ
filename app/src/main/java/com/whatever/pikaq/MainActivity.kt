@@ -30,7 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.whatever.frame.entities.GenerallyListEntity
-import com.whatever.frame.utils.L
+import com.whatever.permission.test.TestPermissionActivity
 import com.whatever.pikaq.ui.theme.PikaQTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,11 +47,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        
-        testBlock()
+        L.d("测试日志")
     }
 
-    private fun testBlock(){
+    private fun testBlock() {
         Thread.sleep(100)
     }
 
@@ -75,10 +74,8 @@ fun MainView() {
             textAlign = TextAlign.Center
         )
         MessageList(mutableListOf<GenerallyListEntity>().apply {
-            add(GenerallyListEntity("1", "111"))
-            add(GenerallyListEntity("2", "222"))
-            add(GenerallyListEntity("3", "333"))
-            add(GenerallyListEntity("4", "444"))
+            add(GenerallyListEntity("游戏", "打开游戏功能"))
+            add(GenerallyListEntity("权限", "权限页面"))
         })
     }
 }
@@ -87,7 +84,8 @@ fun MainView() {
 @Composable
 fun MessageList(messages: List<GenerallyListEntity>) {
     val activityLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.StartActivityForResult()) { result ->
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
         // 处理返回结果
     }
     val context = LocalContext.current
@@ -104,8 +102,15 @@ fun MessageList(messages: List<GenerallyListEntity>) {
                     .fillMaxWidth()
                     .clickable(onClick = {
                         L.el("compose", "点击了一个条目")
-                        activityLauncher.launch(Intent(context,GameChooseNumActivity::class.java))
-                })
+                        val dest = when (item.title) {
+                            "权限" -> {
+                                TestPermissionActivity::class.java
+                            }
+
+                            else -> GameChooseNumActivity::class.java
+                        }
+                        activityLauncher.launch(Intent(context, dest))
+                    })
             ) {
                 Text(text = item.title, Modifier.animateItemPlacement())
                 Text(text = item.description)
